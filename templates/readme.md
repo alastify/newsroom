@@ -9,7 +9,6 @@ Např. app ``newsroom`` obsahuje podadresář ``templates``, ve kterém se nach�
     newsroom
         | - templates
         |    |- newsroom
-        |    |      base.html
         |    |      index.html
         |    |      ...
     templates
@@ -20,11 +19,9 @@ Zkopírujte tedy tento vnořený ``newsroom`` tak, aby se nacházel v tomto adre
     newsroom
         | - templates
         |    |- newsroom
-        |    |      base.html
         |    |      index.html
         |    |      ...
     templates
         |- newsroom
-        |      base.html
         |      index.html
         |      ...

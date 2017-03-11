@@ -20,8 +20,8 @@ from news.views import news, detail
 
 urlpatterns = [
     url("^$", view=news, name="index"),
-    url("^archiv/$", name="detail", view=detail),
-    url("^archiv/(?P<id>[0-9-]+)/$", name="detail", view=detail),
+    # url("^archiv/$", name="detail", view=detail),
+    # url("^archiv/(?P<id>[0-9-]+)/$", name="detail", view=detail),
     url("^zprava/(?P<id>[0-9-]+)/$", name="detail", view=detail),
     url(r'^admin/', admin.site.urls),
 ]
