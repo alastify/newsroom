@@ -6,7 +6,9 @@
         <a href="{{ zprava.url }}">{{ zprava.titulek }}</a>
         ({{ zprava.datum }})
         {{ zprava.obsah|truncatewords:10 }}
+        {% if zprava.obrazek %}
         <img src="{{ zprava.obrazek.url }}" alt="">
+        {% endif %}
     </li>
 {% endfor %}
 </ul>

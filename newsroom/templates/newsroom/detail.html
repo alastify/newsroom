@@ -7,6 +7,7 @@
     <h1>{{ zprava.titulek }}</h1>
     ({{ zprava.datum }})
     {{ zprava.obsah }}
+    {% if zprava.obrazek %}
     <img src="{{ zprava.obrazek.url }}" alt="">
-
+    {% endif %}
 {% endblock %}
