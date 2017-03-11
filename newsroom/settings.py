@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'compressor',
+    # 'compressor', # zrušeno kvůli Windows závislostem
     'corsheaders',
     'sorl.thumbnail',
     'newsroom',
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'newsroom.urls'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
+    # 'compressor.finders.CompressorFinder', # Zrušeno kvůli Windows závislostem
 )
 
 TEMPLATES = [

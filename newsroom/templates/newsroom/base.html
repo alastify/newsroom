@@ -10,10 +10,8 @@
     <title>{% block title %}{% endblock %}{% if settings.SITE_TITLE %} {{ settings.SITE_TITLE }}{% endif %}</title>
     <link rel="shortcut icon" href="{% static "newsroom/img/favicon.ico" %}">
 
-    {% compress css %}
     <link rel="stylesheet" href="{% static "newsroom/css/custom.css" %}">
     {% block extra_css %}{% endblock %}
-    {% endcompress %}
 
     {% block extra_head %}{% endblock %}
 </head>
