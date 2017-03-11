@@ -5,13 +5,13 @@ from .models import Zpravy
 import datetime
 
 
-def index(request, extra_context=None, **kwargs):
+def news(request, extra_context=None, **kwargs):
 
     context = {
         "zpravy": Zpravy.objects.filter(datum__gte=datetime.date.today())
     }
 
-    template = loader.get_template('newsroom/index.html')
+    template = loader.get_template('news/index.html')
     context.update(extra_context or {})
 
     #return TemplateResponse(request, template, context).render()
@@ -24,7 +24,7 @@ def detail(request, id, extra_context=None, **kwargs):
         "zprava": Zpravy.objects.get(pk=id)
     }
 
-    template = loader.get_template('newsroom/detail.html')
+    template = loader.get_template('news/detail.html')
     context.update(extra_context or {})
 
     return HttpResponse(template.render(context, request))

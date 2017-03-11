@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'sorl.thumbnail',
     'newsroom',
+    'news',
 ]
 
 MIDDLEWARE = [
