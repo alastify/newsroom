@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from news.views import news, detail
+from news.views import news, detail, pridat
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     url("^$", view=news, name="index"),
     # url("^archiv/$", name="detail", view=detail),
     # url("^archiv/(?P<id>[0-9-]+)/$", name="detail", view=detail),
+    url("^zprava/pridat/$", name="pridat", view=pridat),
     url("^zprava/(?P<id>[0-9-]+)/$", name="detail", view=detail),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

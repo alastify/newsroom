@@ -6,16 +6,19 @@ from django.core.urlresolvers import reverse
 class Zpravy(models.Model):
     datum = models.DateTimeField(
         verbose_name="Datum zveřejnění",
+        auto_now_add=True,
     )
 
     titulek = models.CharField(
         verbose_name="Titulek",
         max_length=127,
+        default="",
     )
 
     obsah = models.CharField(
         verbose_name="Obsah",
         max_length=999,
+        default="",
     )
 
     obrazek = models.FileField(

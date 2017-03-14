@@ -1,0 +1,27 @@
+
+<form class="" action="/zprava/pridat/" method="post">
+    {% csrf_token %}
+
+    <!-- Titulek -->
+    {% if form.titulek.errors %}
+    <ul>
+        {% for error in form.titulek.errors %}
+            <li>{{ error|escape }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <input type="text" name="titulek" value="{{ form.titulek.value }}">
+
+    <!-- Obsah -->
+    {% if form.obsah.errors %}
+    <ul>
+        {% for error in form.obsah.errors %}
+            <li>{{ error|escape }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <textarea name="obsah">{{ form.obsah.value }}</textarea>
+
+    <input type="submit" name="" value="Odeslat">
+
+</form>
