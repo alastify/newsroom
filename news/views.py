@@ -10,7 +10,7 @@ def news(request, extra_context=None, **kwargs):
 
     context = {
 #        "zpravy": Zpravy.objects.filter(datum__gte=datetime.date.today()),
-        "zpravy": Zpravy.objects.all(),
+        "zpravy": Zpravy.objects.all().order_by('-datum'),
         "form": ZpravyForm(),
     }
 
