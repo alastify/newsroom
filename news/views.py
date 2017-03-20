@@ -36,7 +36,7 @@ def detail(request, id, extra_context=None, **kwargs):
 def pridat(request, extra_context=None, **kwargs):
 
     if request.POST:
-        form = ZpravyForm(request.POST)
+        form = ZpravyForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
